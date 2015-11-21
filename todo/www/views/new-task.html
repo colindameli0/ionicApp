@@ -1,0 +1,20 @@
+<!-- CREATE NEW TASK MODAL -->
+<ion-modal-view>
+
+  <ion-header-bar class="bar-secondary">
+    <h1 class="title">Shit I Need To Do...</h1>
+    <button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
+  </ion-header-bar>
+
+  <ion-content>
+    <form ng-submit="createTask(task)">
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="What shit do I need to do?" ng-model="task.title">
+        </label>
+      </div>
+      <button type="submit" class="button button-block button-positive ion-ios-bolt icon-right">Create This Task</button>
+    </form>
+  </ion-content>
+
+</ion-modal-view>
