@@ -23,13 +23,17 @@
         <button class="button button-icon" ng-click="newTask()">
           <i class="icon ion-compose"></i>
         </button>
+
       </ion-header-bar>
 
       <!-- MAIN CONTENT -->
       <ion-content>
         <ion-list>
           <ion-item ng-repeat="task in tasks">
-            {{task.title}} {{$index}}
+            <button class="button-icon" ng-click="eraseThisTask($index)">
+              <i class="ion-close-circled"></i>
+            </button>
+            {{task.title}}
           </ion-item>
          </ion-list>
       </ion-content>
@@ -37,7 +41,7 @@
     </ion-side-menu-content>
 
     <!-- SIDEMENU VIEW INCLUDE -->  
-    <div ng-include="" src="'views/side-menu.html'"></div>
+    <div ng-include="" src="&apos;views/side-menu.html&apos;"></div>
     
   </ion-side-menus>
 

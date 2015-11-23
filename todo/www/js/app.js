@@ -3,7 +3,10 @@ angular.module('todo', ['ionic'])
 
 .controller('MainCtrl', function($scope, $ionicModal){
   $scope.tasks = [
-  {title: "Add some shit to do"}//default task
+  {title: "Add some shit to do "},
+  {title: "Add some shit to do "},
+  {title: "Add some shit to do "},
+  {title: "Add some shit to do "}
   ];
 
   // Create and load the Modal
@@ -13,7 +16,6 @@ angular.module('todo', ['ionic'])
     scope: $scope,
     animation: 'slide-in-up'
   });
-
 
   // Called when the form is submitted
   $scope.createTask = function(task) {
@@ -35,8 +37,15 @@ angular.module('todo', ['ionic'])
     $scope.taskModal.hide();
   };
 
+  // Eraase all the tasks
   $scope.eraseTasks = function() {
     $scope.tasks = [];
+  };
+
+  // Erase specific task
+  $scope.eraseThisTask = function( idx ) {
+    console.log("clicking");
+    $scope.tasks.splice(idx, 1);
   }
 
 })
@@ -52,6 +61,10 @@ angular.module('todo', ['ionic'])
 
   return vm;
 });
+
+
+
+
 
 // With $scope
 // .controller('SidebarCtrl', function($scope, $ionicModal){
@@ -84,12 +97,4 @@ Todo
   angular.module('todo', ['ionic'])
   .controller('TodoCtrl', function($scope, $ionicModal);
 
-*/
-
-
-
-/*
-todos.filter(function(todo, idx) {
- return idx !== ngRepatIndex
-});
 */
