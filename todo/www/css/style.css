@@ -1,6 +1,10 @@
 /*ICON COLOR*/
-.ion-ios-trash {
+.ion-ios-trash, .ion-ios-gear-outline {
 	font-size: 30px;
+}
+
+.break {
+	display: block;
 }
 
 .ion-close-circled {

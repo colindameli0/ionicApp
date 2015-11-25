@@ -1,13 +1,19 @@
 angular.module('todo', ['ionic'])
 
-
 .controller('MainCtrl', function($scope, $ionicModal){
   $scope.tasks = [
-  {title: "Add some shit to do "},
-  {title: "Add some shit to do "},
-  {title: "Add some shit to do "},
-  {title: "Add some shit to do "}
+  {title: "Walk the dog "},
+  {title: "Phone Uncle Steve "},
+  {title: "Buy all of those damnn groceries "},
+  {title: "Tell Rogers to fuck off "},
+  {title: "Watch that Netflix series "},
+  {title: "Update the wi-fi password"},
+  {title: "Finish this app(etizer) "},
+  {title: "CLEAN the apartment with the Roomba "},
+  {title: "Make that Hotline Bling "}
   ];
+
+  $scope.date = new Date();
 
   // Create and load the Modal
   $ionicModal.fromTemplateUrl('../views/new-task.html', function(modal) {
