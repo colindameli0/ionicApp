@@ -7,11 +7,17 @@
 	display: block;
 }
 
-.ion-close-circled {
-	color: #d12026;
+.ion-checkmark-circled {
+	color: #4F8EF7;
 	font-size: 22px;
 }
 
 .item {
 	font-size: 20px;
+}
+
+.highlight {
+	color: #11C1F3;
+	font-weight: 200;
+    font-size: 20px;
 }

@@ -21,7 +21,7 @@
           <i class="ion-ios-gear-outline"></i>
         </button>
         
-        <h1 class="title"> <span>{{date | date:'EEEE'}}</span> {{date | date:'MMMM d'}}</h1>
+        <h1 class="title"> <span class="highlight">{{date | date:&apos;EEEE&apos;}}</span> {{date | date:&apos;MMMM d&apos;}}</h1>
     
 
         <!-- New Task button-->
@@ -36,7 +36,7 @@
         <ion-list>
           <ion-item ng-repeat="task in tasks">
             <button class="button-icon" ng-click="eraseThisTask($index)">
-              <i class="ion-close-circled"></i>
+              <i class="ion-checkmark-circled"></i>
             </button>
             {{task.title}}
           </ion-item>
