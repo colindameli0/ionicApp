@@ -13,8 +13,6 @@
   <ion-side-menus>
     <ion-side-menu-content>
 
-
-
       <ion-header-bar class="bar-stable">
 
         <button class="button button-left button-icon">
@@ -23,10 +21,9 @@
         
         <h1 class="title"> <span class="highlight">{{date | date:&apos;EEEE&apos;}}</span> {{date | date:&apos;MMMM d&apos;}}</h1>
     
-
         <!-- New Task button-->
-        <button class="button button-right button-icon" ng-click="newTask()">
-          <i class="icon ion-compose"></i>
+        <button class="button button-right button-icon" ng-click="eraseTasks()">
+          <i class="ion-trash-b"></i>
         </button>
 
       </ion-header-bar>
@@ -36,7 +33,7 @@
         <ion-list>
           <ion-item ng-repeat="task in tasks">
             <button class="button-icon" ng-click="eraseThisTask($index)">
-              <i class="ion-checkmark-circled"></i>
+              <i class="ion-checkmark-circled" ng-class="{'ion-close-circled': isActive}"></i>
             </button>
             {{task.title}}
           </ion-item>
@@ -49,11 +46,15 @@
     <div ng-include="" src="&apos;views/side-menu.html&apos;"></div>
     
   </ion-side-menus>
+  
+  <!-- FOOTER WITH BUTTON -->  
+  <ion-footer-bar class="bar-stable">
+    <button class="button button-icon center" ng-click="newTask()">
+      <i class="ion-plus-circled"></i>
+    </button>
+  </ion-footer-bar>
 
 
-<!--      <button class="button button-icon" ng-click="eraseTasks()">
-          <i class="ion-ios-trash"></i>
-        </button> -->
 
 
   <script src="lib/ionic/js/ionic.bundle.js"></script>

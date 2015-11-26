@@ -1,10 +1,6 @@
 /*ICON COLOR*/
-.ion-ios-trash, .ion-ios-gear-outline {
+.ion-trash-b, .ion-ios-gear-outline, .ion-plus-circled {
 	font-size: 30px;
-}
-
-.break {
-	display: block;
 }
 
 .ion-checkmark-circled {
@@ -20,4 +16,12 @@
 	color: #11C1F3;
 	font-weight: 200;
     font-size: 20px;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+.ion-close-circled {
+	color: #d12026;
 }

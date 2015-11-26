@@ -44,13 +44,13 @@ angular.module('todo', ['ionic'])
   };
 
   // Eraase all the tasks
+  $scope.isActive = false;
   $scope.eraseTasks = function() {
-    $scope.tasks = [];
+    $scope.isActive = !$scope.isActive;
   };
 
   // Erase specific task
   $scope.eraseThisTask = function( idx ) {
-    console.log("clicking");
     $scope.tasks.splice(idx, 1);
   }
 
