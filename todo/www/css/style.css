@@ -1,5 +1,5 @@
 /*ICON COLOR*/
-.ion-trash-b, .ion-ios-gear-outline, .ion-plus-circled {
+.ion-trash-b, .ion-gear-a, .ion-plus-circled {
 	font-size: 30px;
 }
 
@@ -24,4 +24,8 @@
 
 .ion-close-circled {
 	color: #d12026;
+}
+
+.fader {
+	opacity: 0.2;
 }

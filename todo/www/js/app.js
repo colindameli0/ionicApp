@@ -61,10 +61,7 @@ angular.module('todo', ['ionic'])
 // Without $scope, ControllerAs 
 .controller('SidebarCtrl', function($ionicModal){
   var vm = {};
-
-  vm.test = 'hi';
-  console.log("hi from sidebar ctrl", vm);
-
+  vm.set = 'SETTINGS';
   return vm;
 });
 

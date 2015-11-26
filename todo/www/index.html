@@ -15,15 +15,15 @@
 
       <ion-header-bar class="bar-stable">
 
-        <button class="button button-left button-icon">
-          <i class="ion-ios-gear-outline"></i>
+        <button class="button button-left button-icon" menu-toggle="left">
+          <i class="ion-gear-a"></i>
         </button>
         
         <h1 class="title"> <span class="highlight">{{date | date:&apos;EEEE&apos;}}</span> {{date | date:&apos;MMMM d&apos;}}</h1>
     
         <!-- New Task button-->
         <button class="button button-right button-icon" ng-click="eraseTasks()">
-          <i class="ion-trash-b"></i>
+          <i class="ion-trash-b" ng-class="{&apos;fader&apos;: isActive}"></i>
         </button>
 
       </ion-header-bar>
@@ -33,7 +33,7 @@
         <ion-list>
           <ion-item ng-repeat="task in tasks">
             <button class="button-icon" ng-click="eraseThisTask($index)">
-              <i class="ion-checkmark-circled" ng-class="{'ion-close-circled': isActive}"></i>
+              <i class="ion-checkmark-circled" ng-class="{&apos;ion-close-circled&apos;: isActive}"></i>
             </button>
             {{task.title}}
           </ion-item>

@@ -1,7 +1,25 @@
  
-  <!--SIDEMENU VIEW -->
-  <ion-side-menu side="left" ng-controller="SidebarCtrl as vm">
-    <ion-header-bar class="bar-calm">
-      <h1 class="title">{{vm.test}} Other Grand Shit</h1>
-    </ion-header-bar>
-  </ion-side-menu>
+ <!--SIDEMENU VIEW -->
+<ion-side-menu side="left" ng-controller="SidebarCtrl as vm">
+	<ion-header-bar class="bar-stable">
+		<h1 class="title">{{vm.set}}</h1>
+	</ion-header-bar>
+
+	<ion-content>
+		<ion-list>
+			<ion-item class="item-icon-left">
+				<i class="icon ion-ios-person-outline"></i>
+				ACCOUNT
+			</ion-item>
+			<ion-item class="item-icon-left">
+				<i class="icon ion-bug"></i>
+				LOG A BUG
+			</ion-item>
+			<ion-item class="item-icon-left">
+				<i class="icon ion-wineglass"></i>
+				HAVE A DRINK
+			</ion-item>
+		</ion-list>
+	</ion-content>
+
+</ion-side-menu>
