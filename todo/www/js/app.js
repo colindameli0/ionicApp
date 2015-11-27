@@ -1,64 +1,67 @@
 angular.module('todo', ['ionic'])
-
 .controller('MainCtrl', function($scope, $ionicModal){
-  $scope.tasks = [
-  {title: "Walk the dog "},
-  {title: "Phone Uncle Steve "},
-  {title: "Buy all of those damnn groceries "},
-  {title: "Tell Rogers to fuck off "},
-  {title: "Watch that Netflix series "},
-  {title: "Update the wi-fi password"},
-  {title: "Finish this app(etizer) "},
-  {title: "CLEAN the apartment with the Roomba "},
-  {title: "Make that Hotline Bling "}
+
+  var defaults = [
+    {title: "Watch that Netflix series"},
+    {title: "Add your new tasks!"}
   ];
 
+  //Find a value in the 'myData' key in localStorage, then load that
+  //Since its now a string and $scope.tasks is a array, we need to convert it back with the function JSON.parse() and pass in the task list as an string
+  $scope.tasks = JSON.parse(localStorage.getItem('myData')) || defaults
+  function updateStorage() {
+    //call the JSON.stringify() function and pass in the $scope.tasks , this will convert the array into just a string
+    localStorage.setItem('myData', JSON.stringify($scope.tasks));
+  }
+
+  //INITIALIZE THE DATE
   $scope.date = new Date();
 
-  // Create and load the Modal
-  $ionicModal.fromTemplateUrl('../views/new-task.html', function(modal) {
+  //CREATE AND LOAD THE MODAL
+  $ionicModal.fromTemplateUrl('./views/new-task.html', function(modal) {
     $scope.taskModal = modal;
   }, {
     scope: $scope,
     animation: 'slide-in-up'
   });
 
-  // Called when the form is submitted
-  $scope.createTask = function(task) {
-    $scope.tasks.push({
-      title: task.title
-    });
-    
-    $scope.taskModal.hide();
-    task.title = "";
-  };
-
-  // Open our new task modal
+  //OPEN THE NEW TASK MODAL
   $scope.newTask = function() {
     $scope.taskModal.show();
   };
 
-  // Close the new task modal
+  //FORM SUBMISSION
+  $scope.createTask = function(task) {
+    $scope.tasks.push({
+      title: task.title
+    });
+    updateStorage();
+    $scope.taskModal.hide();
+    task.title = "";
+  };
+
+  //CLOSE THE NEW TASK MODAL
   $scope.closeNewTask = function() {
     $scope.taskModal.hide();
   };
 
-  // Eraase all the tasks
+  //INITIATE ABILITY TO ERASE TASKS
   $scope.isActive = false;
   $scope.eraseTasks = function() {
     $scope.isActive = !$scope.isActive;
   };
 
-  // Erase specific task
+  //ERASE INDIVIDUAL TASK
   $scope.eraseThisTask = function( idx ) {
     $scope.tasks.splice(idx, 1);
+    updateStorage();
   }
 
 })
 
 
 
-// Without $scope, ControllerAs 
+//SECONDARY 'SETTINGS' CONTROLLER
 .controller('SidebarCtrl', function($ionicModal){
   var vm = {};
   vm.set = 'SETTINGS';
@@ -66,14 +69,6 @@ angular.module('todo', ['ionic'])
 });
 
 
-
-
-
-// With $scope
-// .controller('SidebarCtrl', function($scope, $ionicModal){
-//   $scope.test = 'hi';
-//   console.log("hi from sidebar ctrl", $scope);
-// });
 
 
 /* 
