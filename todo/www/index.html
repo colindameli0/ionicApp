@@ -28,9 +28,17 @@
 
       </ion-header-bar>
 
+
+
+
       <!-- MAIN CONTENT -->
       <ion-content>
-        <ion-list>
+
+        <div class="welcomeMessage" ng-show="tasks.length === 0">
+          <h2>Add Some Tasks To Your <span>ToDo</span> List</h2>
+        </div>
+
+        <ion-list ng-show="tasks.length > 0">
           <ion-item ng-repeat="task in tasks">
             <button class="button-icon" ng-click="eraseThisTask($index)">
               <i class="ion-checkmark-circled" ng-class="{&apos;ion-close-circled&apos;: isActive}"></i>

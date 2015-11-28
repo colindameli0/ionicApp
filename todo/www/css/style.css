@@ -5,6 +5,16 @@
 
 
 /*CONTENT VIEW*/
+.welcomeMessage {
+	width: 95%;
+	margin: 40px auto;
+	text-align: center;
+}
+
+.welcomeMessage span {
+	color: #11C1F3;
+}
+
 .item {
 	font-size: 16px;
 }
