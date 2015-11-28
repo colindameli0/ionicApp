@@ -3,18 +3,18 @@
 
   <ion-header-bar class="bar-secondary">
     <h1 class="title">New Task</h1>
-    <button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
+    <button class="button button-clear button-calm" ng-click="closeNewTask()">Cancel</button>
   </ion-header-bar>
 
   <ion-content>
     <form ng-submit="createTask(task)">
       <div class="list">
         <label class="item item-input">
-          <input type="text" placeholder="What shit do I need to do?" ng-model="task.title" focus="true">
+          <input type="text" placeholder="What do you need to do...?" ng-model="task.title" focus="true">
         </label>
       </div>
 
-      <button type="submit" class="button button-block button-positive">Create This Task</button>
+      <button type="submit" class="button button-block button-calm">Create This Task</button>
     
     </form>
   </ion-content>

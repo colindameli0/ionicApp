@@ -1,5 +1,5 @@
 /*ICON COLORs*/
-.ion-trash-b, .ion-gear-a, .ion-plus-circled {
+.ion-trash-b, .ion-gear-a, .ion-plus-circled, .smiley {
 	font-size: 30px;
 }
 
@@ -7,7 +7,7 @@
 /*CONTENT VIEW*/
 .welcomeMessage {
 	width: 95%;
-	margin: 40px auto;
+	margin: 60px auto;
 	text-align: center;
 }
 
