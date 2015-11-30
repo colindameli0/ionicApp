@@ -41,3 +41,25 @@
 .fader {
 	opacity: 0.2;
 }
+
+.power {
+	position: absolute;
+	bottom: 50px;
+	width: 100%;
+	text-align: center;
+}
+
+.power h3 {
+	font-size: 12px;	
+	text-transform: uppercase;
+}
+
+@keyframes textColorChange {
+    0% {color: #000; transform: scale(1);}
+    50% {color: #4F8EF7; transform: scale(1.1)}
+    100% {color: #11C1F3; transform: scale(1);}
+}
+
+.alert {
+    animation: textColorChange 0.8s infinite;
+}

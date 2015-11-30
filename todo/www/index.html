@@ -28,9 +28,6 @@
 
       </ion-header-bar>
 
-
-
-
       <!-- MAIN CONTENT -->
       <ion-content>
 
@@ -39,7 +36,7 @@
           <span class="smiley"><i class="ion-happy-outline"></i></span>
         </div>
 
-        <ion-list ng-show="tasks.length > 0">
+        <ion-list ng-show="tasks.length &gt; 0">
           <ion-item ng-repeat="task in tasks">
             <button class="button-icon" ng-click="eraseThisTask($index)">
               <i class="ion-checkmark-circled" ng-class="{&apos;ion-close-circled&apos;: isActive}"></i>
@@ -48,6 +45,10 @@
           </ion-item>
          </ion-list>
       </ion-content>
+
+      <div class="power" ng-show="tasks.length === 0">
+        <h3>powered by <span class="alert">Ionic</span></h3>
+      </div>
 
     </ion-side-menu-content>
 
