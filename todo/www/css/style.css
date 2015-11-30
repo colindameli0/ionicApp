@@ -3,6 +3,11 @@
 	font-size: 30px;
 }
 
+/*NEW TASK VIEW*/
+.list input {
+	font-size: 22px;
+	line-height: normal;
+}
 
 /*CONTENT VIEW*/
 .welcomeMessage {
