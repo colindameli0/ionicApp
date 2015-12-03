@@ -1,12 +1,13 @@
 /*ICON COLORs*/
-.ion-trash-b, .ion-gear-a, .ion-plus-circled, .smiley {
+.ion-gear-a, .ion-plus-circled, .smiley {
 	font-size: 30px;
 }
 
 /*NEW TASK VIEW*/
 .list input {
-	font-size: 22px;
+	font-size: 16px;
 	line-height: normal;
+	font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
 }
 
 /*CONTENT VIEW*/
