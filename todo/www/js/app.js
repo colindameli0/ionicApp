@@ -25,6 +25,11 @@ angular.module('todo', ['ionic'])
     $scope.taskModal.show();
   };
 
+  //EDIT THE TASK
+  $scope.editTask = function() {
+    $scope.taskModal.show();
+  };
+
   //FORM SUBMISSION
   $scope.createTask = function(task) {
     $scope.tasks.push({
