@@ -32,17 +32,15 @@
         </div>
 
         <ion-list ng-show="tasks.length &gt; 0">
-          <ion-item class="item-remove-animate" ng-repeat="task in tasks">
-            <button class="button-icon" ng-click="eraseThisTask($index)">
-              <i class="ion-checkmark-circled" ng-class="{&apos;ion-close-circled&apos;: isActive}"></i>
-            </button>
+          <ion-item class="item-remove-animate" ng-repeat="task in tasks track by $index">
             {{task.title}}
-            <button class="button-icon" ng-click="newTask()">
-              <i class="ion-checkmark-circled"></i>
+            <button class="button-icon item-icon-right" ng-click="editTask()">
+              <i class="icon ion-ios-arrow-forward"></i>
             </button>
             <ion-option-button class="button-assertive icon-left ion-trash-b" ng-click="eraseThisTask($index)">DELETE</ion-option-button>
           </ion-item>
          </ion-list>
+         
       </ion-content>
 
       <div class="power" ng-show="tasks.length === 0">

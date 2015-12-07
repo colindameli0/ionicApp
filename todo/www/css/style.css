@@ -10,6 +10,11 @@
 	font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
 }
 
+.cancel {
+	text-transform: uppercase;
+	font-weight: bold !important;
+}
+
 /*CONTENT VIEW*/
 .welcomeMessage {
 	width: 95%;
@@ -19,6 +24,10 @@
 
 .welcomeMessage span {
 	color: #11C1F3;
+}
+
+.ion-plus-circled {
+	color: #4F8EF7;
 }
 
 .item {
