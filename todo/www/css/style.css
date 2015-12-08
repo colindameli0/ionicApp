@@ -4,6 +4,10 @@
 }
 
 /*NEW TASK VIEW*/
+.item-input {
+	margin-top: 20px;
+}
+
 .list input {
 	font-size: 16px;
 	line-height: normal;
