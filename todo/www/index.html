@@ -34,7 +34,7 @@
         <ion-list ng-show="tasks.length &gt; 0">
           <ion-item class="item-remove-animate" ng-repeat="task in tasks track by $index">
             {{task.title}}
-            <button class="button-icon item-icon-right" ng-click="editTask()">
+            <button class="button-icon item-icon-right" ng-click="editTask($index)">
               <i class="icon ion-ios-arrow-forward"></i>
             </button>
             <ion-option-button class="button-assertive icon-left ion-trash-b" ng-click="eraseThisTask($index)">DELETE</ion-option-button>

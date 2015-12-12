@@ -1,19 +1,26 @@
 angular.module('todo', ['ionic'])
 .controller('MainCtrl', function($scope, $ionicModal){
 
-  //Find a value in the 'myData' key in localStorage, then load that
-  //Since its now a string and $scope.tasks is a array, we need to convert it back with the function JSON.parse() and pass in the task list as an string
+
   $scope.tasks = JSON.parse(localStorage.getItem('myData'))
   function updateStorage() {
-    //call the JSON.stringify() function and pass in the $scope.tasks , this will convert the array into just a string
+
     localStorage.setItem('myData', JSON.stringify($scope.tasks));
   }
 
-  //INITIALIZE THE DATE
+
   $scope.date = new Date();
 
-  //CREATE AND LOAD THE MODAL
+  //CREATE AND LOAD THE MODAL FOR CREATING TASKS
   $ionicModal.fromTemplateUrl('./views/new-task.html', function(modal) {
+    $scope.taskModal = modal;
+  }, {
+    scope: $scope,
+    animation: 'slide-in-up'
+  });
+
+  //CREATE AND LOAD THE MODAL FOR EDITING TASKS
+  $ionicModal.fromTemplateUrl('./views/edit-task.html', function(modal) {
     $scope.taskModal = modal;
   }, {
     scope: $scope,
@@ -26,22 +33,24 @@ angular.module('todo', ['ionic'])
   };
 
   //EDIT THE TASK
-  $scope.editTask = function() {
+  $scope.editTask = function($index) {
     $scope.taskModal.show();
+    $scope.selected = $scope.tasks[$index];
+    console.log($scope.tasks[$index]);
+
   };
 
   //FORM SUBMISSION
   $scope.createTask = function(task) {
-    $scope.tasks.push({
-      title: task.title
-    });
-    updateStorage();
-    $scope.taskModal.hide();
-    task.title = "";
+      $scope.tasks.push({title: task.title});
+      updateStorage();
+      task.title = "";
+      $scope.taskModal.hide();
   };
 
   //CLOSE THE NEW TASK MODAL
   $scope.closeNewTask = function() {
+   
     $scope.taskModal.hide();
   };
 
