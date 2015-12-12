@@ -1,10 +1,8 @@
 angular.module('todo', ['ionic'])
 .controller('MainCtrl', function($scope, $ionicModal){
 
-
   $scope.tasks = JSON.parse(localStorage.getItem('myData'))
   function updateStorage() {
-
     localStorage.setItem('myData', JSON.stringify($scope.tasks));
   }
 
@@ -27,20 +25,16 @@ angular.module('todo', ['ionic'])
     animation: 'slide-in-up'
   });
 
-  //OPEN THE NEW TASK MODAL
-  $scope.newTask = function() {
+  /*---------------------------
+  CREATING A NEW TODO TASK
+  ---------------------------*/
+
+  //OPEN BRAND NEW TASK MODAL
+  $scope.openNewTask = function() {
     $scope.taskModal.show();
   };
 
-  //EDIT THE TASK
-  $scope.editTask = function($index) {
-    $scope.editModal.show();
-    $scope.selected = $scope.tasks[$index];
-    updateStorage();
-    selected.title = "";
-  };
-
-  //FORM SUBMISSION
+  //CREATE NEW TASK AND ADD TO THE TODO LIST
   $scope.createTask = function(task) {
       $scope.tasks.push({title: task.title});
       updateStorage();
@@ -48,11 +42,32 @@ angular.module('todo', ['ionic'])
       $scope.taskModal.hide();
   };
 
-  //CLOSE THE NEW TASK MODAL
+  //CLOSE THE NEW TASK MODAL ON 'CANCEL'
   $scope.closeNewTask = function() {
    $scope.editModal.hide();
    $scope.taskModal.hide();
   };
+
+  /*---------------------------
+  EDITING A NEW TODO TASK
+  ---------------------------*/
+
+  //EDIT THE SPECIFIC TASK
+  $scope.editTaskNew = function($index) {
+    $scope.editModal.show();
+    $scope.selected = $scope.tasks[$index];
+    updateStorage();
+    selected.title = "";
+  };
+
+  //HIDE THE EDIT TASK MODAL UPON SUBMIT
+  $scope.editTask = function($index) {
+    $scope.editModal.hide();
+  };
+
+  /*---------------------------
+  DELETING A TODO TASK
+  ---------------------------*/
 
   //INITIATE ABILITY TO ERASE TASKS
   $scope.eraseTasks = function() {
