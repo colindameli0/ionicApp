@@ -21,7 +21,7 @@ angular.module('todo', ['ionic'])
 
   //CREATE AND LOAD THE MODAL FOR EDITING TASKS
   $ionicModal.fromTemplateUrl('./views/edit-task.html', function(modal) {
-    $scope.taskModal = modal;
+    $scope.editModal = modal;
   }, {
     scope: $scope,
     animation: 'slide-in-up'
@@ -34,10 +34,10 @@ angular.module('todo', ['ionic'])
 
   //EDIT THE TASK
   $scope.editTask = function($index) {
-    $scope.taskModal.show();
+    $scope.editModal.show();
     $scope.selected = $scope.tasks[$index];
-    console.log($scope.tasks[$index]);
-
+    updateStorage();
+    selected.title = "";
   };
 
   //FORM SUBMISSION
@@ -50,8 +50,8 @@ angular.module('todo', ['ionic'])
 
   //CLOSE THE NEW TASK MODAL
   $scope.closeNewTask = function() {
-   
-    $scope.taskModal.hide();
+   $scope.editModal.hide();
+   $scope.taskModal.hide();
   };
 
   //INITIATE ABILITY TO ERASE TASKS
