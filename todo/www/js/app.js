@@ -2,10 +2,10 @@ angular.module('todo', ['ionic'])
 .controller('MainCtrl', function($scope, $ionicModal){
 
   $scope.tasks = JSON.parse(localStorage.getItem('myData'))
+
   function updateStorage() {
     localStorage.setItem('myData', JSON.stringify($scope.tasks));
   }
-
 
   $scope.date = new Date();
 
@@ -36,20 +36,20 @@ angular.module('todo', ['ionic'])
 
   //CREATE NEW TASK AND ADD TO THE TODO LIST
   $scope.createTask = function(task) {
-      $scope.tasks.push({title: task.title});
-      updateStorage();
-      task.title = "";
-      $scope.taskModal.hide();
+    $scope.tasks.push({title: task.title});
+    updateStorage();
+    task.title = "";
+    $scope.taskModal.hide();
   };
 
   //CLOSE THE NEW TASK MODAL ON 'CANCEL'
   $scope.closeNewTask = function() {
-   $scope.editModal.hide();
-   $scope.taskModal.hide();
+    $scope.editModal.hide();
+    $scope.taskModal.hide();
   };
 
   /*---------------------------
-  EDITING A NEW TODO TASK
+  EDITING A OLD TODO TASK
   ---------------------------*/
 
   //EDIT THE SPECIFIC TASK
