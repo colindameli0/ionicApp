@@ -1,7 +1,7 @@
 angular.module('todo', ['ionic'])
 .controller('MainCtrl', function($scope, $ionicModal){
 
-  $scope.tasks = JSON.parse(localStorage.getItem('myData'))
+  $scope.tasks = JSON.parse(localStorage.getItem('myData')) || [];
 
   function updateStorage() {
     localStorage.setItem('myData', JSON.stringify($scope.tasks));
